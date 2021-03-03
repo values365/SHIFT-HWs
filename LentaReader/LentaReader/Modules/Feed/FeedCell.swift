@@ -64,11 +64,11 @@ private extension FeedCell {
 		containerView.layer.cornerRadius = Constants.itemCornerRadius.rawValue
 		contentImage.layer.cornerRadius = Constants.itemCornerRadius.rawValue
 
-		titleLabel.textColor = .systemGray2
+		titleLabel.textColor = .systemGray
 		titleLabel.font = .boldSystemFont(ofSize: Constants.regularFontSize.rawValue)
 
 		descriptionLabel.numberOfLines = 0
-		descriptionLabel.textColor = .systemGray2
+		descriptionLabel.textColor = .systemGray
 		descriptionLabel.font = .systemFont(ofSize: Constants.defaultFontSize.rawValue)
 	}
 
