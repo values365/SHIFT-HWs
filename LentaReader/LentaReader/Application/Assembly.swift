@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+enum Assembly {
+	static func initWelcomeModule() -> WelcomeViewController {
+		WelcomeViewController(presenter: WelcomePresenter())
+	}
+
+	static func initFeedModule() -> FeedViewController {
+		FeedViewController(presenter: FeedPresenter())
+	}
+}

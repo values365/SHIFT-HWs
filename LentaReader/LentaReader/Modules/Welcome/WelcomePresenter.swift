@@ -8,13 +8,20 @@
 import Foundation
 
 protocol IWelcomePresenter {
-
+	func viewDidLoad(with viewController: IWelcomeViewController)
 }
 
 final class WelcomePresenter {
+	private weak var viewController: IWelcomeViewController?
 
 }
 
-extension IWelcomePresenter {
-	
+extension WelcomePresenter: IWelcomePresenter {
+	func viewDidLoad(with viewController: IWelcomeViewController) {
+		self.viewController = viewController
+		viewController.tapButtonHandler = { [weak self] in
+			guard let self = self else { return assertionFailure() }
+			self.viewController?.navigationController?.pushViewController(Assembly.initFeedModule(), animated: true)
+		}
+	}
 }
